@@ -1,0 +1,61 @@
+/*  Floating Circles */
+.floating-circles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: #00bfff; /* default blue */
+  animation: floatLeft linear infinite;
+}
+
+/* Randomized circle variations */
+.circle:nth-child(odd) {
+  background: white;
+  opacity: 0.3;
+}
+.circle:nth-child(1) { width: 40px; height: 40px; top: 20%; left: 110%; animation-duration: 18s; }
+.circle:nth-child(2) { width: 25px; height: 25px; top: 40%; left: 120%; animation-duration: 15s; }
+.circle:nth-child(3) { width: 60px; height: 60px; top: 60%; left: 105%; animation-duration: 20s; }
+.circle:nth-child(4) { width: 15px; height: 15px; top: 10%; left: 115%; animation-duration: 12s; }
+.circle:nth-child(5) { width: 80px; height: 80px; top: 50%; left: 125%; animation-duration: 22s; }
+.circle:nth-child(6) { width: 30px; height: 30px; top: 75%; left: 110%; animation-duration: 14s; }
+
+@keyframes floatLeft {
+  0% { transform: translateX(0) translateY(0); opacity: 0.4; }
+  25% { opacity: 0.6; }
+  100% { transform: translateX(-130vw) translateY(-20px); opacity: 0; }
+}
+
+/*  Loading Bar Animation */
+.loading-bar {
+  width: 0%;
+  animation: fillBar 3s ease-in-out forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/*  Fade & Slide-In for content after loading */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-in {
+  animation: fadeSlideIn 1s ease-out forwards;
+}

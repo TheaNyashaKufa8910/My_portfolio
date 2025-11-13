@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Professional blue theme */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 70%;
+    --primary-dark: 217 91% 50%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Gradient colors for modern effects */
+    --gradient-start: 217 91% 60%;
+    --gradient-end: 237 100% 70%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 70%;
+    --primary-dark: 217 91% 50%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 25%;
+    --accent-foreground: 217 91% 60%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 217 91% 60%;
+
+    --gradient-start: 217 91% 60%;
+    --gradient-end: 237 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-twinkle {
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
